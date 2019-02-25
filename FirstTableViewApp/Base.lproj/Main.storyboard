@@ -33,10 +33,19 @@
                                         <action selector="addNewTask:" destination="2T1-kQ-wwR" eventType="touchUpInside" id="jaG-zD-4jT"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQt-aI-2Wu">
+                                    <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                    <state key="normal" title="Edit"/>
+                                    <connections>
+                                        <action selector="editButton:" destination="2T1-kQ-wwR" eventType="touchUpInside" id="vpD-ql-lhf"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ey2-Az-eRd" firstAttribute="centerX" secondItem="bgc-rF-wqp" secondAttribute="centerX" id="7IR-J9-Dv4"/>
+                                <constraint firstItem="tQt-aI-2Wu" firstAttribute="leading" secondItem="bgc-rF-wqp" secondAttribute="leading" constant="16" id="acs-J1-30X"/>
+                                <constraint firstItem="tQt-aI-2Wu" firstAttribute="centerY" secondItem="bgc-rF-wqp" secondAttribute="centerY" id="jnI-OG-Huy"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -76,7 +85,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFt-Nh-8Kz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="32"/>
+            <point key="canvasLocation" x="36" y="31.934032983508249"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="i83-QD-qrB">

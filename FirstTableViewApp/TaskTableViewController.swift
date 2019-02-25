@@ -3,6 +3,17 @@ import UIKit
 class TaskTableViewController: UITableViewController {
     
     var taskModel: TaskList!
+    //var itemStore: ItemStore!
+    @IBAction func editButton(_ sender: UIButton) {
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
+    }
+    
     
     @IBAction func addNewTask(_ sender: Any) {
         let inputAlert = UIAlertController(title: "Enter Task", message: "Describe what you need to do", preferredStyle: .alert)
@@ -41,6 +52,14 @@ class TaskTableViewController: UITableViewController {
             let firstRowSelected = rowsSelected?[0]
             let task = taskModel.getTask(at: (firstRowSelected?.row)!)
             detailView.task = task
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = taskModel.tasks[indexPath.row]
+            self.taskModel.removeTask(task)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
