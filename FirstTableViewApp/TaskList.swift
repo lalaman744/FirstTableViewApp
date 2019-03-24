@@ -17,7 +17,7 @@ class TaskList {
         return nil
     }
     
-    func removeTask(_ task: Task) {
+    func removeTask (_ task: Task) {
         if let index = tasks.index(of: task) {
             tasks.remove(at: index)
         }

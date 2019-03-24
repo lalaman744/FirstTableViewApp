@@ -1,11 +1,11 @@
 import Foundation
 
-class Task {
-    var description: String
+class Task: NSObject {
+    var taskDescription: String
     var dateCreated: Date
     
     init(description: String, dateCreated: Date = Date()) {
-        self.description = description
+        self.taskDescription = description
         self.dateCreated = dateCreated
     }
 }

@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     }
     override func viewDidLoad() {
         let dateString = Formatting.dateFormatter.string(from: (task?.dateCreated)!)
-        taskDescription.text = task.description
+        taskDescription.text = task.taskDescription
         taskDateCreated.text = ("\(dateString)")
     }
 }

@@ -39,7 +39,7 @@ class TaskTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let task = taskModel.getTask(at: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = task?.description
+        cell.textLabel?.text = task?.taskDescription
         let dateString = Formatting.dateFormatter.string(from: (task?.dateCreated)!)
         cell.detailTextLabel?.text = "created at \(dateString)"
         return cell
@@ -58,8 +58,8 @@ class TaskTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = taskModel.tasks[indexPath.row]
-            self.taskModel.removeTask(task)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            taskModel.removeTask(task)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
